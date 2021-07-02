@@ -70,6 +70,11 @@ data "aws_iam_policy_document" "github_deployment" {
       ]
     ])
   }
+  statement {
+    effect = "Allow"
+    actions = ["cloudfront:*"]
+    resources = "*"
+  }
 }
 
 resource "aws_iam_role" "github_iam_user_rotate" {
