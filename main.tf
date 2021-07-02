@@ -72,7 +72,14 @@ data "aws_iam_policy_document" "github_deployment" {
   }
   statement {
     effect = "Allow"
-    actions = ["cloudfront:*"]
+    actions = [
+      "cloudfront:ListTagsForResource",
+      "cloudfront:ListDistributions",
+      "cloudfront:CreateInvalidation",
+      "cloudfront:GetInvalidation",
+      "cloudfront:GetDistributionConfig",
+      "cloudfront:ListInvalidations"
+    ]
     resources = "*"
   }
 }
