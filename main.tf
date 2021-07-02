@@ -80,7 +80,7 @@ data "aws_iam_policy_document" "github_deployment" {
       "cloudfront:GetDistributionConfig",
       "cloudfront:ListInvalidations"
     ]
-    resources = "*"
+    resources = ["*"]
   }
 }
 
