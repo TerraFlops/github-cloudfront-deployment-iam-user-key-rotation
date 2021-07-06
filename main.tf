@@ -38,8 +38,8 @@ resource "aws_iam_group" "github_deployment" {
 }
 
 resource "aws_iam_policy" "github_deployment" {
-  name = local.iam_username
-  description = "GitHub Actions deployment policy"
+  name = "GitHubActionsCloudFrontDeployment"
+  description = "GitHub Actions CloudFront origin deployment policy"
   policy = data.aws_iam_policy_document.github_deployment.json
 }
 
